@@ -1,0 +1,40 @@
+{
+    "name": "tremor",
+    "displayName": "Tremor Language Syntax Highlighter",
+    "description": "Tremor Language Syntax Highlighter",
+    "version": "0.5.2",
+    "publisher": "darach",
+    "engines": {
+        "vscode": "^1.31.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "tremor",
+                "aliases": [
+                    "Tremor",
+                    "tremor"
+                ],
+                "extensions": [
+                    ".tremor"
+                ],
+                "configuration": "./tremor.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "tremor",
+                "scopeName": "source.tremor",
+                "path": "./syntaxes/tremor.tmLanguage"
+            }
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://git.csnzoo.com/tremor/tremor-vscode"
+    },
+    "icon": "icon.png"
+}
