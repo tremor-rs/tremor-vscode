@@ -19,7 +19,7 @@
                     "tremor"
                 ],
                 "extensions": [
-                    ".tremor"
+                    ".tremor", ".trickle"
                 ],
                 "configuration": "./tremor.configuration.json"
             }

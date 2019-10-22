@@ -5,6 +5,7 @@
 	<key>fileTypes</key>
 	<array>
 		<string>tremor</string>
+		<string>trickle</string>
 	</array>
 	<key>name</key>
 	<string>Tremor</string>
@@ -115,6 +116,33 @@
 		<dict>
 			<key>patterns</key>
 			<array>
+
+				<dict>
+					<key>match</key>
+					<string>\b(select|create|define)\b</string>
+					<key>name</key>
+					<string>keyword.other.declaration.tremor</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(operator|script)\b</string>
+					<key>name</key>
+					<string>keyword.other.builtin-type.tremor</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(from|into)\b</string>
+					<key>name</key>
+					<string>keyword.control.tremor</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(event|group|args|window)\b</string>
+					<key>name</key>
+					<string>keyword.data.tremor</string>
+				</dict>
+
+
 				<dict>
 					<key>match</key>
 					<string>\b(const|let)\b</string>
