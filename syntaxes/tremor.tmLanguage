@@ -187,7 +187,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(not|and|or|present|absent)\b</string>
+					<string>\b(not|and|or|xor|present|absent)\b</string>
 					<key>name</key>
 					<string></string>
 				</dict>
