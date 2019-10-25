@@ -131,7 +131,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(from|into)\b</string>
+					<string>\b(from|into|with)\b</string>
 					<key>name</key>
 					<string>keyword.control.tremor</string>
 				</dict>
@@ -163,7 +163,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(match|patch|merge|case|default|insert|update|upsert|erase|end|when|of)\b</string>
+					<string>\b(match|patch|merge|case|default|insert|update|upsert|erase|move|copy|end|when|of)\b</string>
 					<key>name</key>
 					<string>keyword.control.tremor</string>
 				</dict>
