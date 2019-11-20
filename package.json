@@ -2,15 +2,37 @@
     "name": "tremor",
     "displayName": "Tremor Language Syntax Highlighter",
     "description": "Tremor Language Syntax Highlighter",
-    "version": "0.5.2",
-    "publisher": "darach",
+    "version": "0.6.0",
+    "publisher": "tremor",
     "engines": {
-        "vscode": "^1.31.0"
+        "vscode": "^1.37.0"
     },
     "categories": [
-        "Languages"
+        "Programming Languages"
     ],
+    "activationEvents": [
+        "onLanguage:tremor"
+    ],
+    "main": "./client/out/extension",
     "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "Example configuration",
+            "properties": {
+                "TremorLanguageServer.maxNumberOfProblems": {
+                    "scope": "resource",
+                    "type": "number",
+                    "default": 100,
+                    "description": "Controls the maximum number of problems produced by the server."
+                },
+                "TremorLanguageServer.tremorLspServerPath": {
+                    "scope": "resource",
+                    "type": "path",
+                    "default": "~/.cargo/bin/tremor-language-server",
+                    "description": "Path to the tremor language server."
+                }
+            }
+        },
         "languages": [
             {
                 "id": "tremor",
@@ -19,7 +41,8 @@
                     "tremor"
                 ],
                 "extensions": [
-                    ".tremor", ".trickle"
+                    ".tremor",
+                    ".trickle"
                 ],
                 "configuration": "./tremor.configuration.json"
             }
@@ -32,9 +55,25 @@
             }
         ]
     },
+    "scripts": {
+        "vscode:prepublish": "cd client && npm run update-vscode && cd .. && npm run compile",
+        "compile": "tsc -b",
+        "watch": "tsc -b -w",
+        "postinstall": "cd client && npm install && cd .."
+    },
     "repository": {
         "type": "git",
         "url": "https://git.csnzoo.com/tremor/tremor-vscode"
     },
-    "icon": "icon.png"
+    "icon": "icon.png",
+    "dependencies": {
+        "vscode-languageclient": "^5.2.1"
+    },
+    "devDependencies": {
+        "vscode": "^1.1.18",
+        "@types/mocha": "^5.2.0",
+        "@types/node": "^8.0.0",
+        "tslint": "^5.16.0",
+        "typescript": "^3.5.1"
+    }
 }
