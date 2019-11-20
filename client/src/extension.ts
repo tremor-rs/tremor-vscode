@@ -22,9 +22,13 @@ function expandPathResolving(path: string) {
 }
 
 export function activate(context: ExtensionContext) {
+    const config = workspace.getConfiguration('TremorLanguageServer');
 
+    let serverCommand = expandPathResolving("~/.cargo/bin/tremor-language-server")
     // The server is implemented in node
-    let serverCommand = expandPathResolving("~/.cargo/bin/tremor-language-server"); //context.asAbsolutePath(path.join('~', '.cargo', 'bin', 'tremor-language-server'));
+    if (config.has("tremorLspServerPath")) {
+        serverCommand = expandPathResolving(config.get("tremorLspServerPath"))
+    }
     console.log(serverCommand);
     // The debug options for the server
     // --inspect=6009: runs the server in Node's Inspector mode so VS Code can attach to the server for debugging
