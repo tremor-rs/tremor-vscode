@@ -80,6 +80,18 @@
                         <key>1</key>
                         <dict>
                             <key>name</key>
+                            <string>support.module.tremor</string>
+                        </dict>
+                    </dict>
+                    <key>match</key>
+                    <string>\b([_a-z][_a-zA-Z0-9]*)\b(\:\:)</string>
+                </dict>
+                <dict>
+                    <key>captures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
                             <string>variable.parameter.tremor</string>
                         </dict>
                     </dict>
@@ -116,99 +128,123 @@
         <dict>
             <key>patterns</key>
             <array>
+                <dict>
+                    <key>match</key>
+                    <string>\b(event)\b</string>
+                    <key>name</key>
+                    <string>keyword.data.tremor</string>
+                </dict>
 
                 <dict>
                     <key>match</key>
                     <string>\b(select|create|define)\b</string>
                     <key>name</key>
-                    <string>keyword.other.declaration.tremor</string>
+                    <string>keyword.other.declaration.tremor-query</string>
                 </dict>
                 <dict>
                     <key>match</key>
                     <string>\b(operator|script)\b</string>
                     <key>name</key>
-                    <string>keyword.other.builtin-type.tremor</string>
+                    <string>keyword.other.builtin-type.tremor-query</string>
                 </dict>
                 <dict>
                     <key>match</key>
                     <string>\b(from|into|with)\b</string>
                     <key>name</key>
-                    <string>keyword.control.tremor</string>
+                    <string>keyword.control.tremor-query</string>
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(event|group|args|window)\b</string>
+                    <string>\b(group|by|args|window|stream|tumbling|sliding|where|having)\b</string>
                     <key>name</key>
-                    <string>keyword.data.tremor</string>
+                    <string>keyword.data.tremor-query</string>
                 </dict>
-
+                <dict>
+                    <key>match</key>
+                    <string>\b(set|each)\b</string>
+                    <key>name</key>
+                    <string>keyword.grouping.tremor-query</string>
+                </dict>
 
                 <dict>
                     <key>match</key>
                     <string>\b(const|let)\b</string>
                     <key>name</key>
-                    <string>keyword.other.declaration.tremor</string>
+                    <string>keyword.other.declaration.tremor-script</string>
                 </dict>
                 <dict>
                     <key>match</key>
                     <string>\b(null)\b</string>
                     <key>name</key>
-                    <string>keyword.other.builtin-type.tremor</string>
+                    <string>keyword.other.builtin-type.tremor-script</string>
                 </dict>
                 <dict>
                     <key>match</key>
                     <string>\b(emit|drop)\b</string>
                     <key>name</key>
-                    <string>keyword.control.jump.tremor</string>
+                    <string>keyword.control.jump.tremor-script</string>
                 </dict>
                 <dict>
                     <key>match</key>
                     <string>\b(match|patch|merge|case|default|insert|update|upsert|erase|move|copy|end|when|of)\b</string>
                     <key>name</key>
-                    <string>keyword.control.tremor</string>
+                    <string>keyword.control.tremor-script</string>
                 </dict>
                 <dict>
                     <key>match</key>
                     <string>\b(for)\b</string>
                     <key>name</key>
-                    <string>keyword.control.loop.tremor</string>
+                    <string>keyword.control.loop.tremor-script</string>
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>(\-|\+|\*|/(?![/*])|%|&lt;&lt;|&gt;&gt;)</string>
+                    <string>(\-|\+|\*|/(?![/*])|%)</string>
                     <key>name</key>
-                    <string></string>
+                    <string>keyword.operator.arithmetic.tremor-script</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>(&lt;&lt;|(&gt;)?&gt;&gt;)</string>
+                    <key>name</key>
+                    <string>keyword.operator.bitshift.tremor-script</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>(\||\&amp;|\^)</string>
+                    <key>name</key>
+                    <string>keyword.operator.bitwise.tremor-script</string>
                 </dict>
                 <dict>
                     <key>match</key>
                     <string>(==|!=|&lt;=|&gt;=|&lt;|&gt;)</string>
                     <key>name</key>
-                    <string></string>
+                    <string>keyword.operator.comparison.tremor-script</string>
                 </dict>
                 <dict>
                     <key>match</key>
                     <string>\b(not|and|or|xor|present|absent)\b</string>
                     <key>name</key>
-                    <string></string>
-                </dict>
-                <dict>
-                    <key>match</key>
-                    <string>=</string>
-                    <key>name</key>
-                    <string></string>
+                    <string>keyword.operator.boolean.tremor-script</string>
                 </dict>
                 <dict>
                     <key>match</key>
                     <string>(\?|=&gt;)</string>
                     <key>name</key>
-                    <string></string>
+                    <string>keyword.operator.other.tremor-script</string>
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>(\||\&amp;|\,|\^)</string>
+                    <string>=</string>
+                    <key>name</key>
+                    <string>keyword.operator.assignment.tremor-script</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>(\,)</string>
                     <key>name</key>
                     <string></string>
                 </dict>
+
             </array>
         </dict>
         <key>line-comments</key>
