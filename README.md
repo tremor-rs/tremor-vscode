@@ -1,8 +1,8 @@
-#tremor-vscode
+# tremor-vscode
 
 Visual Studio Code extension for tremor.
 
-# Installation
+## Installation
 
 ```bash
 npm install
@@ -13,7 +13,7 @@ vsce package
 code --install-extension tremor-<version>.vsix
 ```
 
-### Configuration
+## Configuration
 
 ```json
     "tremor.languageServerExecutable": "~/.cargo/bin/tremor-language-server"
@@ -21,7 +21,7 @@ code --install-extension tremor-<version>.vsix
     "tremor-query.trace.server": "off"
 ```
 
-### Development
+## Development
 
 For development, symlink the repo to `~/.vscode/extensions/`.
 
