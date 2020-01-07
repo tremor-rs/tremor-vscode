@@ -1,59 +1,119 @@
 {
-    "name": "tremor",
-    "displayName": "Tremor Language Syntax Highlighter",
-    "description": "Tremor Language Syntax Highlighter",
+    "name": "tremor-language-features",
+    "displayName": "Tremor Language Features",
+    "description": "Provides rich language support for Tremor's languages",
     "version": "0.6.0",
-    "publisher": "tremor",
+    "author": "The Tremor Team",
+    "publisher": "tremor-team",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wayfair-incubator/tremor-vscode"
+    },
+    "license": "SEE LICENSE IN LICENSE",
+    "icon": "icon.png",
+    "categories": [
+        "Programming Languages",
+        "Linters",
+        "Other"
+    ],
+    "keywords": [
+        "tremor",
+        "trill",
+        "language-server",
+        "language-server-protocol",
+        "lsp"
+    ],
     "engines": {
         "vscode": "^1.37.0"
     },
-    "categories": [
-        "Programming Languages"
-    ],
     "activationEvents": [
-        "onLanguage:tremor"
+        "onLanguage:tremor-script",
+        "onLanguage:tremor-query"
     ],
     "main": "./client/out/extension",
     "contributes": {
         "configuration": {
             "type": "object",
-            "title": "Example configuration",
+            "title": "Tremor",
             "properties": {
-                "TremorLanguageServer.maxNumberOfProblems": {
+                "tremor.languageServerExecutable": {
                     "scope": "resource",
-                    "type": "number",
-                    "default": 100,
-                    "description": "Controls the maximum number of problems produced by the server."
-                },
-                "TremorLanguageServer.tremorLspServerPath": {
-                    "scope": "resource",
-                    "type": "path",
+                    "type": "string",
                     "default": "~/.cargo/bin/tremor-language-server",
-                    "description": "Path to the tremor language server."
+                    "description": "Executable for the tremor language server."
+                },
+                "tremor-script.trace.server": {
+                    "scope": "window",
+                    "type": "string",
+                    "enum": [
+                        "off",
+                        "messages",
+                        "verbose"
+                    ],
+                    "default": "off",
+                    "description": "Traces the communication between VS Code and the language server (for tremor-script)."
+                },
+                "tremor-query.trace.server": {
+                    "scope": "window",
+                    "type": "string",
+                    "enum": [
+                        "off",
+                        "messages",
+                        "verbose"
+                    ],
+                    "default": "off",
+                    "description": "Traces the communication between VS Code and the language server (for tremor-query)."
                 }
             }
         },
         "languages": [
             {
-                "id": "tremor",
+                "id": "tremor-script",
                 "aliases": [
-                    "Tremor",
-                    "tremor"
+                    "tremor-script",
+                    "tremorscript",
+                    "Tremor Script"
                 ],
                 "extensions": [
-                    ".tremor",
+                    ".tremor"
+                ],
+                "configuration": "./languages/tremor-configuration.json"
+            },
+            {
+                "id": "tremor-query",
+                "aliases": [
+                    "tremor-query",
+                    "tremorquery",
+                    "Tremor Query",
+                    "trickle",
+                    "Trickle"
+                ],
+                "extensions": [
                     ".trickle"
                 ],
-                "configuration": "./tremor.configuration.json"
+                "configuration": "./languages/tremor-configuration.json"
             }
         ],
         "grammars": [
             {
-                "language": "tremor",
+                "language": "tremor-script",
+                "scopeName": "source.tremor",
+                "path": "./syntaxes/tremor.tmLanguage"
+            },
+            {
+                "language": "tremor-query",
                 "scopeName": "source.tremor",
                 "path": "./syntaxes/tremor.tmLanguage"
             }
-        ]
+        ],
+        "configurationDefaults": {
+            "[tremor-script]": {
+                "editor.tabSize": 2
+            },
+            "[tremor-query]": {
+                "editor.tabSize": 2
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "cd client && npm run update-vscode && cd .. && npm run compile",
@@ -61,19 +121,10 @@
         "watch": "tsc -b -w",
         "postinstall": "cd client && npm install && cd .."
     },
-    "repository": {
-        "type": "git",
-        "url": "https://git.csnzoo.com/tremor/tremor-vscode"
-    },
-    "icon": "icon.png",
-    "dependencies": {
-        "vscode-languageclient": "^5.2.1"
-    },
     "devDependencies": {
-        "vscode": "^1.1.18",
-        "@types/mocha": "^5.2.0",
-        "@types/node": "^8.0.0",
+        "@types/mocha": "^5.2.7",
+        "@types/node": "^12.11.7",
         "tslint": "^5.16.0",
-        "typescript": "^3.5.1"
+        "typescript": "^3.6.4"
     }
 }

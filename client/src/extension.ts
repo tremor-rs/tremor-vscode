@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { window, workspace, ExtensionContext } from 'vscode';
+import { workspace, ExtensionContext } from 'vscode';
 import { homedir } from 'os';
 import {
     LanguageClient,
@@ -11,8 +11,9 @@ import {
 
 } from 'vscode-languageclient';
 
-let client: LanguageClient;
+const packageJSON = require('../../package.json');
 
+let client: LanguageClient;
 
 function expandPathResolving(path: string) {
     if (path.startsWith('~/')) {
@@ -21,31 +22,23 @@ function expandPathResolving(path: string) {
     return path;
 }
 
-export function activate(context: ExtensionContext) {
-    const config = workspace.getConfiguration('TremorLanguageServer');
+function startTremorLanguageClient(language: string, serverCommand: string) {
+    let commandArgs: string[] = [`--language=${language}`];
 
-    let serverCommand = expandPathResolving("~/.cargo/bin/tremor-language-server")
-    // The server is implemented in node
-    if (config.has("tremorLspServerPath")) {
-        serverCommand = expandPathResolving(config.get("tremorLspServerPath"))
-    }
-    console.log(serverCommand);
-    // The debug options for the server
-    // --inspect=6009: runs the server in Node's Inspector mode so VS Code can attach to the server for debugging
-    //let debugOptions = { execArgv: ['--nolazy', '--inspect=6009'] };
     let commandOptions: ExecutableOptions = { stdio: 'pipe', detached: false };
 
     // If the extension is launched in debug mode then the debug server options are used
     // Otherwise the run options are used
+    // TODO add debug flag to the server
     let serverOptions: ServerOptions = {
-        run: <Executable>{ command: serverCommand, options: commandOptions },
-        debug: <Executable>{ command: serverCommand, options: commandOptions },
+        run: <Executable>{ command: serverCommand, args: commandArgs, options: commandOptions },
+        debug: <Executable>{ command: serverCommand, args: commandArgs, options: commandOptions },
     };
 
     // Options to control the language client
     let clientOptions: LanguageClientOptions = {
         // Register the server for plain text documents
-        documentSelector: [{ scheme: 'file', language: 'tremor' }],
+        documentSelector: [{ scheme: 'file', language: language }],
         synchronize: {
             // Notify the server about file changes to '.clientrc files contained in the workspace
             fileEvents: workspace.createFileSystemWatcher('**/.clientrc')
@@ -54,15 +47,30 @@ export function activate(context: ExtensionContext) {
 
     // Create the language client and start the client.
     client = new LanguageClient(
-        'TremorLanguageServer',
-        'Tremor Language Server',
+        language,
+        `Trill (${language})`,
         serverOptions,
         clientOptions
     );
 
     client.registerProposedFeatures();
+
     // Start the client. This will also launch the server
     client.start();
+}
+
+export function activate(context: ExtensionContext) {
+    const config = workspace.getConfiguration('tremor');
+
+    let serverCommand = expandPathResolving('~/.cargo/bin/tremor-language-server');
+    if (config.has('languageServerExecutable')) {
+        serverCommand = expandPathResolving(config.get('languageServerExecutable'));
+    }
+
+    // TODO consider handling multiple languages from a single server process
+    for (let language of packageJSON.contributes.languages) {
+      startTremorLanguageClient(language.id, serverCommand);
+    }
 }
 
 export function deactivate(): Thenable<void> {
