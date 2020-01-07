@@ -62,9 +62,9 @@ function startTremorLanguageClient(language: string, serverCommand: string) {
 export function activate(context: ExtensionContext) {
     const config = workspace.getConfiguration('tremor');
 
-    let serverCommand = expandPathResolving('~/.cargo/bin/tremor-language-server')
+    let serverCommand = expandPathResolving('~/.cargo/bin/tremor-language-server');
     if (config.has('languageServerExecutable')) {
-        serverCommand = expandPathResolving(config.get('languageServerExecutable'))
+        serverCommand = expandPathResolving(config.get('languageServerExecutable'));
     }
 
     // TODO consider handling multiple languages from a single server process
