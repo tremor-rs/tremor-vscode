@@ -115,7 +115,7 @@
             <array>
                 <dict>
                     <key>match</key>
-                    <string>\b(event)\b</string>
+                    <string>\b(event|state)\b</string>
                     <key>name</key>
                     <!-- using this scope to color these as special -->
                     <string>keyword.other.new.tremor</string>
