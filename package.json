@@ -70,6 +70,7 @@
             {
                 "id": "tremor-script",
                 "aliases": [
+                    "tremor",
                     "tremor-script",
                     "tremorscript",
                     "Tremor Script"
@@ -82,11 +83,11 @@
             {
                 "id": "tremor-query",
                 "aliases": [
+                    "trickle",
+                    "Trickle",
                     "tremor-query",
                     "tremorquery",
-                    "Tremor Query",
-                    "trickle",
-                    "Trickle"
+                    "Tremor Query"
                 ],
                 "extensions": [
                     ".trickle"
