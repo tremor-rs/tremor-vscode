@@ -30,7 +30,7 @@ any guidance or assistance.
 To request a new feature, please file it as a new [issue](https://github.com/wayfair-tremor/tremor-vscode/issues/new).
 
 ## Bug Reports
-[buvscodets]: #bug-reports
+[bug-reports]: #bug-reports
 
 While bugs are unfortunate, they're a reality in software. We can't fix what we
 don't know about, so please report liberally. If you're not sure if something
