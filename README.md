@@ -1,6 +1,6 @@
 # Tremor language support for VS Code
 
-Adds support for Tremor's languages ([tremor-script](https://docs.tremor.rs/tremor-script/) and [tremor-query](https://docs.tremor.rs/tremor-query/)) to Visual Studio Code. Features:
+Adds support for [Tremor's](https://www.tremor.rs/) languages ([tremor-script](https://docs.tremor.rs/tremor-script/) and [tremor-query](https://docs.tremor.rs/tremor-query/)) to Visual Studio Code. Features:
 
 * Syntax highlighting for *.tremor* (tremor-script) and *.trickle* (tremor-query) files
 * Error squiggles (with hints for fixing, as applicable)
@@ -9,6 +9,8 @@ Adds support for Tremor's languages ([tremor-script](https://docs.tremor.rs/trem
 * Language configuration (autoclosing and surrounding pairs, comment toggling, bracket definition, etc.)
 
 The rich integration features (error diagnostics and completion/hover support) are powered by the [Tremor Language Server](https://github.com/wayfair-tremor/tremor-language-server/) (Trill). To activate all the features, you will need to install it alongside the extension (instructions below).
+
+For support, please file an [issue on the repo](https://github.com/wayfair-tremor/tremor-vscode/issues/new) or talk to us on [Slack](https://join.slack.com/t/tremor-debs/shared_invite/enQtOTMxNzY3NDg0MjI2LTQ4MTU4NjlkZDk0MmJmNmIwYjU0ZDc1OTNjMGRmNzUwZTdlZGVkMWFmNGFkZTAwOWJlYjlkMDZkNGNiMjQ2NzI). For more details on how you can contribute to this repo (and the [Tremor project](https://www.tremor.rs/) in general), see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 
 ## Installation
