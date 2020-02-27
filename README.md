@@ -1,19 +1,32 @@
-# tremor-vscode
+# Tremor language support for VS Code
 
-Visual Studio Code extension for tremor.
+Adds support for Tremor's languages ([tremor-script](https://docs.tremor.rs/tremor-script/) and [tremor-query](https://docs.tremor.rs/tremor-query/)) to Visual Studio Code. Features:
+
+* Syntax highlighting for *.tremor* (tremor-script) and *.trickle* (tremor-query) files
+* Error squiggles (with hints for fixing, as applicable)
+* Completion for tremor-script and tremor-query (aggregate) functions
+* Hover documentation for functions
+* Language configuration (autoclosing and surrounding pairs, comment toggling, bracket definition, etc.)
+
+The rich integration features (error diagnostics and completion/hover support) are powered by the [Tremor Language Server](https://github.com/wayfair-tremor/tremor-language-server/) (Trill). To activate all the features, you will need to install it alongside the extension (instructions below).
+
 
 ## Installation
 
-```bash
-npm install
+### Language Server
 
-sudo npm install -g vsce
-vsce package
+First install the Rust compiler and cargo (Rust's package manager) via https://www.rustup.rs/. This is required currently to build and install the language server.
 
-code --install-extension tremor-<version>.vsix
-```
+Now run `cargo install tremor-language-server`. This places the language server binary in `~/.cargo/bin/`, and by default, the extension is configured to pick it up from there.
+
+### Extension
+
+Install from [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=tremorproject.tremor-language-features), or by entering `ext install tremorproject.tremor-language-features` at the VS Code command palette `Ctrl`+`P`.
+
 
 ## Configuration
+
+This extension provides options in VS Code's configuration settings (under `File > Preferences > Settings`). Available options, with their default values:
 
 ```json
     "tremor.languageServerExecutable": "~/.cargo/bin/tremor-language-server"
@@ -21,16 +34,11 @@ code --install-extension tremor-<version>.vsix
     "tremor-query.trace.server": "off"
 ```
 
+If you installed the language server binary somewhere outside the default cargo path, you will need to update `tremor.languageServerExecutable`.
+
+The trace configuration controls logging of communication between VS Code and the language server, for each of the tremor languages. Acceptable values are: `"off"`, `"messages"`, `"verbose"`. Turning these on can be helpful during extension development/debugging (to see the log output, navigate to `View -> Output`, then select `Trill` entries from the output dropdown).
+
+
 ## Development
 
-For development, symlink the repo to `~/.vscode/extensions/`.
-
-To compile edited typescript files to javascript, run: `npm run compile` from the repository root.
-
-If you are using VS Code itself for editing the extension files, you can skip the above and just press `F5` to debug the extension: this will run `npm watch` task in the background to compile the code, and launch the extension in a new VS Code window.
-
-Helpful links:
-
-* https://code.visualstudio.com/api/language-extensions/overview
-* https://code.visualstudio.com/api/language-extensions/language-server-extension-guide
-* https://code.visualstudio.com/api/references/vscode-api
+See [development.md](development.md).
