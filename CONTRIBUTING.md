@@ -126,9 +126,6 @@ Once your merge request is approved it will enter the merge queue
 
 [darach]: https://github.com/darach
 
-Speaking of tests, Rust has a comprehensive test suite. More information about
-it can be found [here][https://github.com/wayfair-tremor/tremor-vscode/blob/master/docs/development/testing.md].
-
 ## Writing Documentation
 
 Documentation improvements are very welcome. The source of `docs.tremor.rs`
