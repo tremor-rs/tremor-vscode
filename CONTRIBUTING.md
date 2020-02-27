@@ -8,9 +8,7 @@ to the Tremor project as an external contributor:
 - [Contributing to Tremor](#contributing-to-tremor)
   - [Feature Requests](#feature-requests)
   - [Bug Reports](#bug-reports)
-  - [The Build System](#the-build-system)
   - [Pull Requests](#pull-requests)
-    - [External Dependencies](#external-dependencies)
   - [Writing Documentation](#writing-documentation)
   - [Issue Triage](#issue-triage)
   - [Out-of-tree Contributions](#out-of-tree-contributions)
@@ -29,13 +27,10 @@ any guidance or assistance.
 ## Feature Requests
 [feature-requests]: #feature-requests
 
-To request a change to the way that Tremor works, please head over
-to the [RFCs repository](https://github.com/wayfair-tremor/tremor-rfcs) and view the
-[README](https://github.com/wayfair-tremor/tremor-rfcs/blob/master/README.md)
-for instructions.
+To request a new feature, please file it as a new [issue](https://github.com/wayfair-tremor/tremor-vscode/issues/new).
 
 ## Bug Reports
-[bug-reports]: #bug-reports
+[buvscodets]: #bug-reports
 
 While bugs are unfortunate, they're a reality in software. We can't fix what we
 don't know about, so please report liberally. If you're not sure if something
@@ -45,28 +40,25 @@ is a bug or not, feel free to file a bug anyway.
 please follow our [instructions for reporting security vulnerabilities](https://docs.tremor.rs/policies/security)**.
 
 If you have the chance, before reporting a bug, please [search existing
-issues](https://github.com/wayfair-tremor/tremor-runtime/search?q=&type=Issues&utf8=%E2%9C%93),
+issues](https://github.com/wayfair-tremor/tremor-vscode/search?q=&type=Issues&utf8=%E2%9C%93),
 as it's possible that someone else has already reported your error. This doesn't
 always work, and sometimes it's hard to know what to search for, so consider this
 extra credit. We won't mind if you accidentally file a duplicate report.
 
 Similarly, to help others who encountered the bug find your issue,
 consider filing an issue with a descriptive title, which contains information that might be unique to it.
-This can be the language or compiler feature used, the conditions that trigger the bug,
-or part of the error message if there is any.
-An example could be: **"impossible case reached" on match expression in tremor scripting language**.
 
 Opening an issue is as easy as following [this
-link](https://github.com/wayfair-tremor/tremor-runtime/issues/new) and filling out the fields.
+link](https://github.com/wayfair-tremor/tremor-vscode/issues/new) and filling out the fields.
 Here's a template that you can use to file a bug, though it's not necessary to
 use it exactly:
 
 ```
     <short summary of the bug>
 
-    I tried this code:
+    I tried to do this:
 
-    <code sample that causes the bug>
+    <steps that causes the bug>
 
     I expected to see this happen: <explanation>
 
@@ -74,31 +66,17 @@ use it exactly:
 
     ## Meta
 
-    `tremor-script --version`:
+    `code --version`
 
-    Backtrace:
+    `code --list-extensions --show-versions | grep "tremorproject"`
+
+    `tremor-language-server --version`
+
+    Operating system
 ```
 
 All three components are important: what you did, what you expected, what
-happened instead. Please include the output of `tremor-server --version`,
-which includes important information about what platform you're on, what
-version of Rust you're using, etc.
-
-Sometimes, a backtrace is helpful, and so including that is nice. To get
-a backtrace, set the `RUST_BACKTRACE` environment variable to a value
-other than `0`. The easiest way to do this is to invoke `tremor-server` like this:
-
-```bash
-$ RUST_BACKTRACE=1 tremor-server...
-```
-
-## The Build System
-
-For info on how to configure and build the project, please see [the tremor build guide][tremor-build-guide]. 
-This guide contains info for contributions to the project and the standard facilities. It also lists some
-really useful commands to the build system, which could save you a lot of time.
-
-[tremor-build-guide]: http://docs.tremor.rs/development/quick-start/
+happened instead.
 
 ## Pull Requests
 [pull-requests]: #pull-requests
@@ -129,15 +107,6 @@ the issue in question.
 
 [closing-keywords]: https://help.github.com/en/articles/closing-issues-using-keywords
 
-Please make sure your pull request is in compliance with Tremor's style
-guidelines by running
-
-    $ sh ./contrib/pre-commit
-
-Make this check before every pull request (and every new commit in a pull
-request); you can add [git hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)
-before every push to make sure you never forget to make this check.
-
 All pull requests are reviewed by another person.
 
 If you want to request that a specific person reviews your pull request,
@@ -158,16 +127,7 @@ Once your merge request is approved it will enter the merge queue
 [darach]: https://github.com/darach
 
 Speaking of tests, Rust has a comprehensive test suite. More information about
-it can be found [here][https://github.com/wayfair-incubator/tremor-runtime/blob/master/docs/development/testing.md].
-
-### External Dependencies
-
-Currently building the Tremor project will also build the following external projects:
-
-* [clippy](https://github.com/rust-lang/rust-clippy)
-* [rustfmt](https://github.com/rust-lang/rustfmt)
-
-Breakage is not allowed in released branches and must be addressed before a PR is merged.
+it can be found [here][https://github.com/wayfair-incubator/tremor-vscode/blob/master/docs/development/testing.md].
 
 ## Writing Documentation
 
@@ -193,7 +153,7 @@ still valid. Load up an older issue, double check that it's still true, and
 leave a comment letting us know if it is or is not. The [least recently
 updated sort][lru] is good for finding issues like this.
 
-[lru]: https://github.com/wayfair-tremor/tremor-runtime/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-asc
+[lru]: https://github.com/wayfair-tremor/tremor-vscode/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-asc
 
 ## Out-of-tree Contributions
 
