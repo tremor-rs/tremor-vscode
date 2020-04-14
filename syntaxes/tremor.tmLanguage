@@ -93,7 +93,7 @@
                         </dict>
                     </dict>
                     <key>match</key>
-                    <string>\b([_a-z][_a-zA-Z0-9]*)\b(\:\:)</string>
+                    <string>(\b([_a-z][_a-zA-Z0-9]*)\b(\:\:))+</string>
                 </dict>
                 <dict>
                     <key>captures</key>
@@ -151,7 +151,6 @@
                     <key>name</key>
                     <string>keyword.control.grouping.tremor-query</string>
                 </dict>
-
                 <dict>
                     <key>match</key>
                     <string>\b(emit|drop)\b</string>
@@ -181,6 +180,18 @@
                     <string>\b(patch|insert|upsert|update|erase|move|copy|merge)\b</string>
                     <key>name</key>
                     <string>keyword.control.patch.tremor-script</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>\b(fn|intrinsic)\b</string>
+                    <key>name</key>
+                    <string>keyword.fn.tremor-script</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>\b(use|as|mod)\b</string>
+                    <key>name</key>
+                    <string>keyword.modularity.tremor-script</string>
                 </dict>
                 <dict>
                     <key>match</key>
