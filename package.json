@@ -124,8 +124,13 @@
     },
     "devDependencies": {
         "@types/mocha": "^7.0.2",
-        "@types/node": "^13.13.2",
-        "tslint": "^6.1.1",
+        "@types/node": "^13.13.4",
+        "patch-package": "^6.2.2",
+        "tslint": "^6.1.2",
         "typescript": "^3.8.3"
+    },
+    "dependencies": {
+        "minimist": "^1.2.5",
+        "request": "^2.88.2"
     }
 }
