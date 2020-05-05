@@ -2,7 +2,7 @@
     "name": "tremor-language-features",
     "displayName": "Tremor Language Features",
     "description": "Provides rich language support for Tremor's languages",
-    "version": "0.8.0",
+    "version": "0.7.3",
     "author": "The Tremor Team",
     "publisher": "tremorproject",
     "repository": {
