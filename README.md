@@ -31,9 +31,12 @@ Install from [VSCode Marketplace](https://marketplace.visualstudio.com/items?ite
 This extension provides options in VS Code's configuration settings (under `File > Preferences > Settings`). Available options, with their default values:
 
 ```json
-    "tremor.languageServerExecutable": "~/.cargo/bin/tremor-language-server"
-    "tremor-script.trace.server": "off"
+{
+    "tremor.languageServerExecutable": "~/.cargo/bin/tremor-language-server",
+    "tremor.languageServerModulePath": "",
+    "tremor-script.trace.server": "off",
     "tremor-query.trace.server": "off"
+}
 ```
 
 If you installed the language server binary somewhere outside the default cargo path, you will need to update `tremor.languageServerExecutable`.
