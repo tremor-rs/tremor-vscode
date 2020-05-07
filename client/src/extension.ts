@@ -23,8 +23,7 @@ function expandPathResolving(path: string) {
 }
 
 function startTremorLanguageClient(language: string, path: string, serverCommand: string) {
-    // this is safe because we provide a default value for this arg above
-    let commandArgs: string[] = [`--language=${language}`, `--path="${path}"`];
+    let commandArgs: string[] = [`--language=${language}`, `--path=${path}`];
 
     let commandOptions: ExecutableOptions = { stdio: 'pipe', detached: false };
 
