@@ -2,7 +2,7 @@
     "name": "tremor-language-features",
     "displayName": "Tremor Language Features",
     "description": "Provides rich language support for Tremor's languages",
-    "version": "0.7.3",
+    "version": "0.8.0",
     "author": "The Tremor Team",
     "publisher": "tremorproject",
     "repository": {
@@ -41,6 +41,12 @@
                     "type": "string",
                     "default": "~/.cargo/bin/tremor-language-server",
                     "description": "Executable for the tremor language server."
+                },
+                "tremor.languageServerModulePath": {
+                    "scope": "resource",
+                    "type": "string",
+                    "default": "",
+                    "description": "TREMOR_PATH for the tremor language server."
                 },
                 "tremor-script.trace.server": {
                     "scope": "window",
