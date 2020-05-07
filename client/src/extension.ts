@@ -22,8 +22,9 @@ function expandPathResolving(path: string) {
     return path;
 }
 
-function startTremorLanguageClient(language: string, serverCommand: string) {
-    let commandArgs: string[] = [`--language=${language}`];
+function startTremorLanguageClient(language: string, path: string, serverCommand: string) {
+    // this is safe because we provide a default value for this arg above
+    let commandArgs: string[] = [`--language=${language}`, `--path="${path}"`];
 
     let commandOptions: ExecutableOptions = { stdio: 'pipe', detached: false };
 
@@ -66,10 +67,14 @@ export function activate(context: ExtensionContext) {
     if (config.has('languageServerExecutable')) {
         serverCommand = expandPathResolving(config.get('languageServerExecutable'));
     }
+    let modulePath = '';
+    if (config.has('languageServerModulePath')) {
+        modulePath = config.get('languageServerModulePath');
+    }
 
     // TODO consider handling multiple languages from a single server process
     for (let language of packageJSON.contributes.languages) {
-      startTremorLanguageClient(language.id, serverCommand);
+      startTremorLanguageClient(language.id, modulePath, serverCommand);
     }
 }
 
