@@ -133,7 +133,7 @@
         "@types/node": "^14.0.1",
         "patch-package": "^6.2.2",
         "tslint": "^6.1.2",
-        "typescript": "^3.9.2"
+        "typescript": "^3.9.3"
     },
     "dependencies": {
         "minimist": "^1.2.5",
