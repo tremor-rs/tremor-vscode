@@ -90,12 +90,12 @@ bring those changes into the source repository.
 [about-pull-requests]: https://help.github.com/articles/about-pull-requests/
 [development-models]: https://help.github.com/articles/about-collaborative-development-models/
 
-Please make pull requests against the `master` branch.
+Please make pull requests against the `main` branch.
 
 Tremor follows a no merge policy, meaning, when you encounter merge
 conflicts you are expected to always rebase instead of merge.
 E.g. always use rebase when bringing the latest changes from
-the master branch to your feature branch.
+the main branch to your feature branch.
 Also, please make sure that fixup commits are squashed into other related
 commits with meaningful commit messages.
 
