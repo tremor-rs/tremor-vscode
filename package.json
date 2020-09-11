@@ -7,7 +7,7 @@
     "publisher": "tremorproject",
     "repository": {
         "type": "git",
-        "url": "https://github.com/wayfair-tremor/tremor-vscode"
+        "url": "https://github.com/tremor-rs/tremor-vscode"
     },
     "license": "SEE LICENSE IN LICENSE",
     "icon": "icon.png",

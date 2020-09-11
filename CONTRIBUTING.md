@@ -27,7 +27,7 @@ any guidance or assistance.
 ## Feature Requests
 [feature-requests]: #feature-requests
 
-To request a new feature, please file it as a new [issue](https://github.com/wayfair-tremor/tremor-vscode/issues/new).
+To request a new feature, please file it as a new [issue](https://github.com/tremor-rs/tremor-vscode/issues/new).
 
 ## Bug Reports
 [bug-reports]: #bug-reports
@@ -40,7 +40,7 @@ is a bug or not, feel free to file a bug anyway.
 please follow our [instructions for reporting security vulnerabilities](https://docs.tremor.rs/policies/security)**.
 
 If you have the chance, before reporting a bug, please [search existing
-issues](https://github.com/wayfair-tremor/tremor-vscode/search?q=&type=Issues&utf8=%E2%9C%93),
+issues](https://github.com/tremor-rs/tremor-vscode/search?q=&type=Issues&utf8=%E2%9C%93),
 as it's possible that someone else has already reported your error. This doesn't
 always work, and sometimes it's hard to know what to search for, so consider this
 extra credit. We won't mind if you accidentally file a duplicate report.
@@ -49,7 +49,7 @@ Similarly, to help others who encountered the bug find your issue,
 consider filing an issue with a descriptive title, which contains information that might be unique to it.
 
 Opening an issue is as easy as following [this
-link](https://github.com/wayfair-tremor/tremor-vscode/issues/new) and filling out the fields.
+link](https://github.com/tremor-rs/tremor-vscode/issues/new) and filling out the fields.
 Here's a template that you can use to file a bug, though it's not necessary to
 use it exactly:
 
@@ -129,14 +129,14 @@ Once your merge request is approved it will enter the merge queue
 ## Writing Documentation
 
 Documentation improvements are very welcome. The source of `docs.tremor.rs`
-is located in the [tremor docs repo](https://github.com/wayfair-tremor/tremor-www-docs). Documentation pull requests function in the same way as other pull requests.
+is located in the [tremor docs repo](https://github.com/tremor-rs/tremor-www-docs). Documentation pull requests function in the same way as other pull requests.
 
 To find documentation-related issues, sort by the [doc label][tremor-doc-label].
 
-[tremor-doc-label]: https://github.com/wayfair-tremor/tremor-www-docs/issues?q=is%3Aopen%20is%3Aissue%20label%3Adoc
+[tremor-doc-label]: https://github.com/tremor-rs/tremor-www-docs/issues?q=is%3Aopen%20is%3Aissue%20label%3Adoc
 
 Additionally, contributions to the [tremor-guide] are always welcome. Contributions
-can be made directly [here](https://github.com/wayfair-tremor/tremor-www-docs) repo. The issue
+can be made directly [here](https://github.com/tremor-rs/tremor-www-docs) repo. The issue
 tracker in that repo is also a great way to find things that need doing.
 
 ## Issue Triage
@@ -150,7 +150,7 @@ still valid. Load up an older issue, double check that it's still true, and
 leave a comment letting us know if it is or is not. The [least recently
 updated sort][lru] is good for finding issues like this.
 
-[lru]: https://github.com/wayfair-tremor/tremor-vscode/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-asc
+[lru]: https://github.com/tremor-rs/tremor-vscode/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-asc
 
 ## Out-of-tree Contributions
 
@@ -159,7 +159,7 @@ this repository.
 
 Answer questions in the _Get Help!_ channels from the [Tremor Chat][tremor-chat].
 
-Participate in the [RFC process](https://github.com/wayfair-tremor/tremor-rfcs).
+Participate in the [RFC process](https://github.com/tremor-rs/tremor-rfcs).
 
 ## Tremor Chat
 [tremor-chat]: #tremor-chat
