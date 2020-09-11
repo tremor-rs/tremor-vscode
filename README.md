@@ -8,9 +8,9 @@ Adds support for [Tremor's](https://www.tremor.rs/) languages ([tremor-script](h
 * Hover documentation for functions
 * Language configuration (autoclosing and surrounding pairs, comment toggling, bracket definition, etc.)
 
-The rich integration features (error diagnostics and completion/hover support) are powered by the [Tremor Language Server](https://github.com/wayfair-tremor/tremor-language-server/) (Trill). To activate all the features, you will need to install it alongside the extension (instructions below).
+The rich integration features (error diagnostics and completion/hover support) are powered by the [Tremor Language Server](https://github.com/tremor-rs/tremor-language-server/) (Trill). To activate all the features, you will need to install it alongside the extension (instructions below).
 
-For support, please file an [issue on the repo](https://github.com/wayfair-tremor/tremor-vscode/issues/new) or talk to us on [Slack](https://chat.tremor.rs). For more details on how you can contribute to this repo (and the [Tremor project](https://www.tremor.rs/) in general), see [CONTRIBUTING.md](CONTRIBUTING.md).
+For support, please file an [issue on the repo](https://github.com/tremor-rs/tremor-vscode/issues/new) or talk to us on [Slack](https://chat.tremor.rs). For more details on how you can contribute to this repo (and the [Tremor project](https://www.tremor.rs/) in general), see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 
 ## Installation
