@@ -10,16 +10,13 @@
     },
     "license": "Apache-2.0",
     "engines": {
-        "vscode": "^1.37.0"
-    },
-    "scripts": {
-        "update-vscode": "vscode-install",
-        "postinstall": "vscode-install"
+        "vscode": "^1.52.0"
     },
     "dependencies": {
-        "vscode-languageclient": "^5.2.1"
+        "vscode-languageclient": "^7.0.0"
     },
     "devDependencies": {
-        "vscode": "^1.1.35"
+        "@types/vscode": "^1.52.0",
+        "vscode-test": "^1.4.1"
     }
 }
