@@ -47,3 +47,7 @@ The trace configuration controls logging of communication between VS Code and th
 ## Development
 
 See [development.md](development.md).
+
+## Publishing
+
+See [publishing.md](publishing.md).
