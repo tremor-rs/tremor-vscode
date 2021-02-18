@@ -9,7 +9,7 @@
         "type": "git",
         "url": "https://github.com/tremor-rs/tremor-vscode"
     },
-    "license": "ASL2.0",
+    "license": "Apache-2.0",
     "icon": "icon.png",
     "categories": [
         "Programming Languages",
