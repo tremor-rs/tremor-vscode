@@ -1,5 +1,5 @@
 # this is a comment
-"this is a {1} string with #{1} interpolation but \#{3} squigglies"
+"this is a {1} string with #{1 + 1} interpolation but \#{3} squigglies and a # in it"
 1
 1.2
 1e-10
