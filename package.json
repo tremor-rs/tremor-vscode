@@ -2,14 +2,14 @@
     "name": "tremor-language-features",
     "displayName": "Tremor Language Features",
     "description": "Provides rich language support for Tremor's languages",
-    "version": "0.8.0",
+    "version": "0.10.0",
     "author": "The Tremor Team",
     "publisher": "tremorproject",
     "repository": {
         "type": "git",
         "url": "https://github.com/tremor-rs/tremor-vscode"
     },
-    "license": "SEE LICENSE IN LICENSE",
+    "license": "ASL2.0",
     "icon": "icon.png",
     "categories": [
         "Programming Languages",
@@ -136,6 +136,7 @@
         "typescript": "^4.1.5"
     },
     "dependencies": {
-        "request": "^2.88.2"
+        "request": "^2.88.2",
+        "vsce": "^1.85.0"
     }
 }
