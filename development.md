@@ -35,3 +35,13 @@ To install the package:
 ```sh
 code --install-extension tremor-<version>.vsix
 ```
+
+To uninstall the package:
+
+```sh
+code --uninstall-extension tremor-<version>.vsix
+```
+
+## Publishing
+
+For publishing a version of the extension to the vscode marketplace, read the [publishing](./publishing.md) guide
