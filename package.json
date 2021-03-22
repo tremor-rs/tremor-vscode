@@ -129,7 +129,7 @@
         "postinstall": "cd client && npm install && cd .."
     },
     "devDependencies": {
-        "@types/mocha": "^8.2.1",
+        "@types/mocha": "^8.2.2",
         "@types/node": "^14.14.35",
         "patch-package": "^6.4.7",
         "tslint": "^6.1.3",
