@@ -42,13 +42,13 @@ async function main() {
 		};
 		// Download VS Code, unzip it and run the integration test
 		console.log(arg_min);
-		await runTests(arg_min);
+		let res_min = await runTests(arg_min);
+		if (res_min != 0) {
+			process.exit(res_min);
+		}
 		
 		console.log(arg);
-		await runTests(arg);
-
-		
-		//await runTests({ extensionDevelopmentPath, extensionTestsPath, launchArgs: ['--disable-extensions', tremor_script_fixture_path] });
+		await runTests(arg)
 	} catch (err) {
 		console.error("Failed to run tests:", err);
 		process.exit(1);

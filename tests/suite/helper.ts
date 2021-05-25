@@ -9,7 +9,6 @@ export async function activate() {
 	// The extensionId is `publisher.name` from package.json
 	const ext = vscode.extensions.getExtension('tremorproject.tremor-language-features')!;
 	await ext.activate();
-	
 }
 
 export async function loadFile(docUri: vscode.Uri): Promise<[vscode.TextDocument, vscode.TextEditor]> {
