@@ -15,7 +15,7 @@ export async function activate() {
 export async function loadFile(docUri: vscode.Uri): Promise<[vscode.TextDocument, vscode.TextEditor]> {
 	let doc = await vscode.workspace.openTextDocument(docUri);
 	let editor = await vscode.window.showTextDocument(doc);
-	await sleep(1000); // Wait for server activation
+	await sleep(2000); // Wait for server activation
 	return [doc, editor];
 }
 
@@ -24,7 +24,7 @@ export async function loadTrickle(content: string): Promise<[vscode.TextDocument
 	let doc = await vscode.workspace.openTextDocument(getDocUri("empty.trickle"));
 	let editor = await vscode.window.showTextDocument(doc);
 	await setTestContent(editor, content);
-	await sleep(1000); // Wait for server activation
+	await sleep(2000); // Wait for server activation
 	return [doc, editor];
 }
 
