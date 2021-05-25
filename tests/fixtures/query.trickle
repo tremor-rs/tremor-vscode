@@ -1,0 +1,13 @@
+define tumbling window my_window with
+  size = 2
+end;
+
+define script my_script
+script
+  event
+end;
+
+create script my_script;
+
+select event from in into;
+select {"event": [1, 2, event.foo]} from my_script[my_window] group by event.foo into out;

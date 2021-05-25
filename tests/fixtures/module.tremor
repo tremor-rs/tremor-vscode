@@ -1,0 +1,27 @@
+mod foo with
+  const badger = "snot";
+
+	const divisors = {
+		"Fizz": 3,
+		"Buzz": 5
+	};
+
+  fn divisible_by(n, denominator) with
+	  n % denominator == 0
+	end;
+
+  fn fizzbuzz(n) with
+		let res = "";
+		for divisors of
+		  case (k, divisor) when divisible_by(n, divisor) =>
+					let res = res + k
+		end;
+		match res of
+		  case "" => n
+			default => res
+		end
+	end;
+end;
+
+
+foo::fizzbuzz(event)

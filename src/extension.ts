@@ -1,19 +1,17 @@
-import * as path from 'path';
 import { workspace, ExtensionContext } from 'vscode';
 import { homedir } from 'os';
 import {
     LanguageClient,
     LanguageClientOptions,
     ServerOptions,
-    TransportKind,
     ExecutableOptions,
     Executable
 
-} from 'vscode-languageclient';
+} from 'vscode-languageclient/node';
 
 const packageJSON = require('../../package.json');
 
-let client: LanguageClient;
+let client: LanguageClient | undefined;
 
 function expandPathResolving(path: string) {
     if (path.startsWith('~/')) {
@@ -25,10 +23,10 @@ function expandPathResolving(path: string) {
 function startTremorLanguageClient(language: string, path: string, serverCommand: string) {
     let commandArgs: string[] = [`--language=${language}`];
     if (path) {
-      commandArgs.push(`--path=${path}`);
+        commandArgs.push(`--path=${path}`);
     }
 
-    let commandOptions: ExecutableOptions = { stdio: 'pipe', detached: false };
+    let commandOptions: ExecutableOptions = { detached: false };
 
     // If the extension is launched in debug mode then the debug server options are used
     // Otherwise the run options are used
@@ -46,6 +44,7 @@ function startTremorLanguageClient(language: string, path: string, serverCommand
             // Notify the server about file changes to '.clientrc files contained in the workspace
             fileEvents: workspace.createFileSystemWatcher('**/.clientrc')
         },
+        outputChannelName: 'Trill'
     };
 
     // Create the language client and start the client.
@@ -62,27 +61,18 @@ function startTremorLanguageClient(language: string, path: string, serverCommand
     client.start();
 }
 
-export function activate(context: ExtensionContext) {
-    const config = workspace.getConfiguration('tremor');
+export async function activate(context: ExtensionContext) {
+    const config = workspace.getConfiguration('tremor', context.extensionUri);
 
-    let serverCommand = expandPathResolving('~/.cargo/bin/tremor-language-server');
-    if (config.has('languageServerExecutable')) {
-        serverCommand = expandPathResolving(config.get('languageServerExecutable'));
-    }
-    let modulePath = '';
-    if (config.has('languageServerModulePath')) {
-        modulePath = config.get('languageServerModulePath');
-    }
+    let serverCommand = expandPathResolving(config.get('languageServerExecutable', '~/.cargo/bin/tremor-language-server'));
+    let modulePath = config.get('languageServerModulePath', '');
 
     // TODO consider handling multiple languages from a single server process
     for (let language of packageJSON.contributes.languages) {
-      startTremorLanguageClient(language.id, modulePath, serverCommand);
+        startTremorLanguageClient(language.id, modulePath, serverCommand);
     }
 }
 
-export function deactivate(): Thenable<void> {
-    if (!client) {
-        return undefined;
-    }
-    return client.stop();
+export async function deactivate() {
+    await client?.stop();
 }
