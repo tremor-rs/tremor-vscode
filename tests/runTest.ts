@@ -20,17 +20,10 @@ async function main() {
 		// Passed to --extensionTestsPath
 		const extensionTestsPath = path.resolve(__dirname, './suite/index');
 
-		//const trickle_fixture_path = path.resolve(__dirname, '../../tests/fixtures/trickle/query.trickle');
-
-		//const tremor_script_fixture_path = path.resolve(__dirname, '../../tests/fixtures/tremor_script');
-
 		const arg_min = {
 			version: minimalVersion,
 			extensionDevelopmentPath,
 			extensionTestsPath,
-			extensionsTestEnv: {
-				'SHELL': '/bin/bash'
-			},
 			launchArgs: ['--disable-extensions']
 		};
 
