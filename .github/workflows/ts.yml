@@ -24,11 +24,14 @@ jobs:
 
     - uses: actions-rs/toolchain@v1
       with:
-        override: true
+        toolchain: 1.52.1
         profile: minimal
     - uses: Swatinem/rust-cache@v1
     - name: install tremor language server
-      run: cargo install --git https://github.com/tremor-rs/tremor-language-server.git --tag v0.11.4
+      uses: actions-rs/cargo@v1
+      with:
+        command: install
+        args: --git https://github.com/tremor-rs/tremor-language-server.git --tag v0.11.4
 
     # Install node modules
     - name: Dependencies
