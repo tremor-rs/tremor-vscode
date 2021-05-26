@@ -32,7 +32,7 @@ jobs:
       with:
         command: install
         # TODO: move to --tag v0.11.5 once released
-        args: --git https://github.com/tremor-rs/tremor-language-server.git --branch ensure-crate-download
+        args: --git https://github.com/tremor-rs/tremor-language-server.git --branch main
 
     # Install node modules
     - name: Dependencies
