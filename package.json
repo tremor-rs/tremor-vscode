@@ -145,7 +145,7 @@
     },
     "dependencies": {
         "request": "^2.88.2",
-        "vsce": "^1.95.1",
+        "vsce": "^1.96.0",
         "vscode-languageclient": "^7.0.0"
     }
 }
