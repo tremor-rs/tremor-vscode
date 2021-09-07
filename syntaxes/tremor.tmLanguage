@@ -6,6 +6,7 @@
     <array>
         <string>tremor</string>
         <string>trickle</string>
+        <string>troy</string>
     </array>
     <key>name</key>
     <string>Tremor</string>
@@ -129,9 +130,27 @@
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(operator|script|query)\b</string>
+                    <string>\b(define|deploy)\b</string>
+                    <key>name</key>
+                    <string>storage.statement.tremor-deploy</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>\b(operator|script|pipeline)\b</string>
                     <key>name</key>
                     <string>keyword.control.builtin-type.tremor-query</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>\b(connector|pipeline|flow|config|links)\b</string>
+                    <key>name</key>
+                    <string>keyword.control.builtin-type.tremor-deploy</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>\b(connect|to)\b</string>
+                    <key>name</key>
+                    <string>keyword.control.tremor-deploy</string>
                 </dict>
                 <dict>
                     <key>match</key>

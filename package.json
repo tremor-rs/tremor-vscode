@@ -2,7 +2,7 @@
     "name": "tremor-language-features",
     "displayName": "Tremor Language Features",
     "description": "Provides rich language support for Tremor's languages",
-    "version": "0.10.0",
+    "version": "0.12.0",
     "author": "The Tremor Team",
     "publisher": "tremorproject",
     "repository": {
@@ -24,11 +24,12 @@
         "lsp"
     ],
     "engines": {
-        "vscode": "^1.53.0"
+        "vscode": "^1.60.0"
     },
     "activationEvents": [
         "onLanguage:tremor-script",
-        "onLanguage:tremor-query"
+        "onLanguage:tremor-query",
+        "onLanguage:termor-deploy"
     ],
     "main": "./out/src/extension",
     "contributes": {
@@ -69,6 +70,17 @@
                     ],
                     "default": "off",
                     "description": "Traces the communication between VS Code and the language server (for tremor-query)."
+                },
+                "tremor-deploy.trace.server": {
+                    "scope": "window",
+                    "type": "string",
+                    "enum": [
+                        "off",
+                        "messages",
+                        "verbose"
+                    ],
+                    "default": "off",
+                    "description": "Traces the communication between VS Code and the language server (for tremor-query)."
                 }
             }
         },
@@ -99,6 +111,20 @@
                     ".trickle"
                 ],
                 "configuration": "./languages/tremor-configuration.json"
+            },
+            {
+                "id": "tremor-deploy",
+                "aliases": [
+                    "troy",
+                    "Troy",
+                    "tremor-deploy",
+                    "tremordeploy",
+                    "Tremor Deploy"
+                ],
+                "extensions": [
+                    ".troy"
+                ],
+                "configuration": "./languages/tremor-configuration.json"
             }
         ],
         "grammars": [
@@ -111,10 +137,18 @@
                 "language": "tremor-query",
                 "scopeName": "source.tremor",
                 "path": "./syntaxes/tremor.tmLanguage"
+            },
+            {
+                "language": "tremor-deploy",
+                "scopeName": "source.tremor",
+                "path": "./syntaxes/tremor.tmLanguage"
             }
         ],
         "configurationDefaults": {
             "[tremor-script]": {
+                "editor.tabSize": 2
+            },
+            "[tremor-deploy]": {
                 "editor.tabSize": 2
             },
             "[tremor-query]": {
