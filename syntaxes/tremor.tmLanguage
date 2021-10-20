@@ -129,7 +129,7 @@
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(operator|script)\b</string>
+                    <string>\b(operator|script|query)\b</string>
                     <key>name</key>
                     <string>keyword.control.builtin-type.tremor-query</string>
                 </dict>
