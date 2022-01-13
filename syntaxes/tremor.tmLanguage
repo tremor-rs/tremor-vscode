@@ -130,13 +130,13 @@
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(operator|script|query|pipeline)\b</string>
+                    <string>\b(operator|script|pipeline)\b</string>
                     <key>name</key>
                     <string>keyword.control.builtin-type.tremor-query</string>
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(connector|flow|query)\b</string>
+                    <string>\b(connector|flow|pipeline)\b</string>
                     <key>name</key>
                     <string>keyword.control.builtin-type.tremor-deploy</string>
                 </dict>
