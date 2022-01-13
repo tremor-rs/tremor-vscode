@@ -19,17 +19,18 @@
     "keywords": [
         "tremor",
         "trill",
+        "troy",
         "language-server",
         "language-server-protocol",
         "lsp"
     ],
     "engines": {
-        "vscode": "^1.60.0"
+        "vscode": "^1.63.0"
     },
     "activationEvents": [
         "onLanguage:tremor-script",
         "onLanguage:tremor-query",
-        "onLanguage:termor-deploy"
+        "onLanguage:tremor-deploy"
     ],
     "main": "./out/src/extension",
     "contributes": {
@@ -80,7 +81,7 @@
                         "verbose"
                     ],
                     "default": "off",
-                    "description": "Traces the communication between VS Code and the language server (for tremor-query)."
+                    "description": "Traces the communication between VS Code and the language server (for tremor-deploy)."
                 }
             }
         },
@@ -152,6 +153,9 @@
                 "editor.tabSize": 2
             },
             "[tremor-query]": {
+                "editor.tabSize": 2
+            },
+            "[tremor-deploy]": {
                 "editor.tabSize": 2
             }
         }

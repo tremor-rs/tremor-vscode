@@ -130,27 +130,21 @@
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(define|deploy)\b</string>
-                    <key>name</key>
-                    <string>storage.statement.tremor-deploy</string>
-                </dict>
-                <dict>
-                    <key>match</key>
-                    <string>\b(operator|script|pipeline)\b</string>
+                    <string>\b(operator|script|query|pipeline)\b</string>
                     <key>name</key>
                     <string>keyword.control.builtin-type.tremor-query</string>
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(connector|pipeline|flow|config|links)\b</string>
+                    <string>\b(connector|flow|query)\b</string>
                     <key>name</key>
                     <string>keyword.control.builtin-type.tremor-deploy</string>
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(connect|to)\b</string>
+                    <string>\b(deploy|connect|to)\b</string>
                     <key>name</key>
-                    <string>keyword.control.tremor-deploy</string>
+                    <string>storage.statement.tremor-deploy</string>
                 </dict>
                 <dict>
                     <key>match</key>
