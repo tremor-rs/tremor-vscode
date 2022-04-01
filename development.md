@@ -27,6 +27,7 @@ For distributing the extension outside of the marketplace (or for local testing)
 
 ```sh
 npm install -g vsce
+npm install
 vsce package
 ```
 

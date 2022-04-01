@@ -44,7 +44,7 @@ function startTremorLanguageClient(language: string, path: string, serverCommand
             // Notify the server about file changes to '.clientrc files contained in the workspace
             fileEvents: workspace.createFileSystemWatcher('**/.clientrc')
         },
-        outputChannelName: 'Trill'
+        outputChannelName: `Trill (${language})`
     };
 
     // Create the language client and start the client.
