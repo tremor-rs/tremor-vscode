@@ -29,6 +29,8 @@ jobs:
     - uses: Swatinem/rust-cache@v1
     - name: install tremor language server
       uses: actions-rs/cargo@v1
+      env:
+        RUSTFLAGS: '-C target-cpu=native'
       with:
         command: install
         # TODO: move to --tag v0.11.5 once released
@@ -44,3 +46,6 @@ jobs:
         VSCODE_CLI: 1
       with:
         run: npm run test
+
+    - name: Gramar Test
+      run: npm run tmgrammar-test
