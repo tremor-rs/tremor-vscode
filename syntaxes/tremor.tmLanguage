@@ -106,7 +106,7 @@
                         </dict>
                     </dict>
                     <key>match</key>
-                    <string>\.\s*([_a-z][_a-zA-Z0-9]*)\b[^\(]</string>
+                    <string>\.\s*([_a-z][_a-zA-Z0-9]*)\b</string>
                 </dict>
             </array>
         </dict>
@@ -306,7 +306,7 @@
                             <key>match</key>
                             <string>\\.</string>
                             <key>name</key>
-                            <string>invalid.illegal.tremor</string>
+                            <string>string.quoted.double.tremor</string>
                         </dict>
                         <dict>
                           <key>include</key>
