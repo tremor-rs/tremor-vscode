@@ -1,0 +1,21 @@
+# SYNTAX TEST "source.tremor" "Interpolation test"
+
+"before#{ event.snot }after";
+#<-----  source.tremor string.quoted.double.tremor
+#^^^^^^  source.tremor string.quoted.double.tremor
+#      ^^  source.tremor string.quoted.double.tremor punctuation.definition.interpolation.begin.tremor
+#         ^^^^^  source.tremor string.quoted.double.tremor keyword.other.new.tremor
+#              ^  source.tremor string.quoted.double.tremor
+#               ^^^^  source.tremor string.quoted.double.tremor object.fields.tremor
+#                    ^ source.tremor string.quoted.double.tremor punctuation.definition.interpolation.end.tremor
+#                     ^^^^^  source.tremor string.quoted.double.tremor
+
+"before#{event.snot}after";
+#<-----  source.tremor string.quoted.double.tremor
+#^^^^^^  source.tremor string.quoted.double.tremor
+#      ^^  source.tremor string.quoted.double.tremor punctuation.definition.interpolation.begin.tremor
+#        ^^^^^  source.tremor string.quoted.double.tremor keyword.other.new.tremor
+#             ^  source.tremor string.quoted.double.tremor
+#              ^^^^  source.tremor string.quoted.double.tremor object.fields.tremor
+#                  ^ source.tremor string.quoted.double.tremor punctuation.definition.interpolation.end.tremor
+#                   ^^^^^  source.tremor string.quoted.double.tremor
