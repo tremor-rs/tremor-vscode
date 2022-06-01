@@ -24,7 +24,7 @@ jobs:
         RUSTFLAGS: '-C target-cpu=native'
       with:
         command: install
-        args: --git https://github.com/tremor-rs/tremor-language-server.git --tag v0.12.0
+        args: tremor-language-server
 
     # Install node modules
     - name: Dependencies
