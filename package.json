@@ -182,7 +182,7 @@
 	},
 	"dependencies": {
 		"request": "^2.88.2",
-		"vsce": "^2.9.3",
+		"vsce": "^2.10.0",
 		"vscode-languageclient": "^8.0.2"
 	},
 	"__metadata": {
