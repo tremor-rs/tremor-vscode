@@ -165,7 +165,7 @@
 		"tmgrammar-test": "vscode-tmgrammar-test -g syntaxes/tremor.tmLanguage tests/fixtures/interpolsation.tremor"
 	},
 	"devDependencies": {
-		"@types/glob": "^8.0.0",
+		"@types/glob": "^8.0.1",
 		"@types/mocha": "^10.0.1",
 		"@types/node": "^18.11.18",
 		"@types/vscode": "^1.74.0",
