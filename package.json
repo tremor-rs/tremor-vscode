@@ -172,7 +172,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.59.11",
 		"@typescript-eslint/parser": "^5.59.11",
 		"eslint": "^8.43.0",
-		"glob": "^10.2.7",
+		"glob": "^10.3.1",
 		"mocha": "^10.2.0",
 		"patch-package": "^7.0.0",
 		"tslint": "^6.1.3",
